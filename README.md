@@ -59,7 +59,7 @@ See the [`d2l-fetch browser compatibility`](https://github.com/Brightspace/d2l-f
 
 ```js
 
-const client = new window.d2lTelemetryBrowserClient.Client({
+const client = window.d2lTelemetryBrowserClient.Client({
   endpoint
 });
 
@@ -69,11 +69,11 @@ const id = 'http://prd.activityfeed.us-east-1.brightspace.com/api/v1/d2l:orgUnit
 // by current BDP processing. Even though these events are not yet going to BDP, suggestion
 // is to either use an internal identifier or encode the URL.
 // The URL is included as a new EventBody.Object.Url property.
-const eventBody = new window.d2lTelemetryBrowserClient.EventBody()
+const eventBody = window.d2lTelemetryBrowserClient.EventBody()
   .setAction('Created')
   .setObject(encodeURIComponent(id), 'Article', id);
 
-const event = new window.d2lTelemetryBrowserClient.TelemetryEvent()
+const event = window.d2lTelemetryBrowserClient.TelemetryEvent()
   .setDate(new Date())
   .setType('TelemetryEvent')
   .setSourceId('activityfeed')
